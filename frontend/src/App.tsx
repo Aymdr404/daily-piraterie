@@ -15,7 +15,7 @@ const App: React.FC = () => {
     const fetchArticle = async () => {
       try {
         // 🧠 Ajuste l’URL si ton backend est hébergé ailleurs
-        const res = await axios.get<Article>("http://localhost:4000/api/article-du-jour");
+        const res = await axios.get<Article>("https://legifrance-backend.onrender.com/api/article-du-jour");
         setArticle(res.data);
       } catch (err) {
         console.error(err);
