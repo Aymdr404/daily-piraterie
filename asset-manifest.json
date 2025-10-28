@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.d0e1c6b7.js",
-    "static/js/453.d7446e4a.chunk.js": "/static/js/453.d7446e4a.chunk.js",
-    "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.d0e1c6b7.js.map": "/static/js/main.d0e1c6b7.js.map",
-    "453.d7446e4a.chunk.js.map": "/static/js/453.d7446e4a.chunk.js.map"
+    "main.css": "/daily-piraterie/static/css/main.e6c13ad2.css",
+    "main.js": "/daily-piraterie/static/js/main.fede85b2.js",
+    "static/js/453.d7446e4a.chunk.js": "/daily-piraterie/static/js/453.d7446e4a.chunk.js",
+    "index.html": "/daily-piraterie/index.html",
+    "main.e6c13ad2.css.map": "/daily-piraterie/static/css/main.e6c13ad2.css.map",
+    "main.fede85b2.js.map": "/daily-piraterie/static/js/main.fede85b2.js.map",
+    "453.d7446e4a.chunk.js.map": "/daily-piraterie/static/js/453.d7446e4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d0e1c6b7.js"
+    "static/js/main.fede85b2.js"
   ]
 }
