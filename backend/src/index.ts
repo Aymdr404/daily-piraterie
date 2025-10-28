@@ -1,11 +1,18 @@
 import express, { Request, Response } from "express";
 import fetch from "node-fetch";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
-app.use(express.json());
+app.use(
+  cors({
+    origin: "https://www.aymeric-sabatier.fr",
+    methods: ["GET", "POST"],
+  })
+);
+
 
 const PORT = process.env.PORT || 4000;
 
@@ -61,6 +68,4 @@ app.get("/api/article-du-jour", async (_req: Request, res: Response) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`✅ Backend démarré sur http://localhost:${PORT}`);
-});
+app.listen(PORT, () => console.log(`Serveur lancé sur ${PORT}`));
