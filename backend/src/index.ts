@@ -12,7 +12,8 @@ app.use(
     origin: "*",
   })
 );
-app.use("/public", express.static(path.join(process.cwd(), "public")));
+
+app.use("/previews", express.static(path.join(process.cwd(), "public/previews")));
 
 const filePath = path.join(process.cwd(), "articles.json");
 const articles = JSON.parse(fs.readFileSync(filePath, "utf-8"));
@@ -28,11 +29,8 @@ app.get("/api/article-du-jour", async (req, res) => {
     const article = articles[index];
 
     // Génère une image à la volée
-    await generateImage(
-      article.titre,
-      article.contenu.slice(0, 250) + "...",
-      now.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })
-    );
+    const date = new Date().toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" });
+    const imageUrl = await generateImage(article.titre, article.contenu, date);
 
     res.json({
       date: now.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" }),
