@@ -22,7 +22,7 @@ const App: React.FC = () => {
     const fetchArticle = async () => {
       try {
         const res = await axios.get<ApiResponse>(
-          "https://daily-piraterie-backend.onrender.com/api/article-du-jour"
+          "https://legifrance-backend.onrender.com/api/article-du-jour"
         );
         setData(res.data);
       } catch (err) {
