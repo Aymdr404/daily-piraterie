@@ -8,13 +8,14 @@
     "extract": "node extract.js"
   },
   "dependencies": {
+    "canvas": "^3.2.0",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
-    "typescript": "^5.3.3",
+    "@types/cors": "^2.8.17",
     "@types/express": "^5.0.5",
-    "@types/cors": "^2.8.17"
+    "typescript": "^5.3.3"
   }
 }

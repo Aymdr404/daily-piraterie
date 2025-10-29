@@ -2,20 +2,22 @@ import express from "express";
 import cors from "cors";
 import fs from "fs";
 import path from "path";
+import { generateImage } from "./generateImage.js";
 
 const app = express();
 const PORT = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: "*", // Pour Render + GitHub Pages (tu peux restreindre plus tard à ton domaine)
+    origin: "*",
   })
 );
+app.use("/public", express.static(path.join(process.cwd(), "public")));
 
 const filePath = path.join(process.cwd(), "articles.json");
 const articles = JSON.parse(fs.readFileSync(filePath, "utf-8"));
 
-app.get("/api/article-du-jour", (req, res) => {
+app.get("/api/article-du-jour", async (req, res) => {
   try {
     const now = new Date();
     const startOfYear = new Date(now.getFullYear(), 0, 0);
@@ -25,11 +27,19 @@ app.get("/api/article-du-jour", (req, res) => {
     const index = dayOfYear % articles.length;
     const article = articles[index];
 
+    // Génère une image à la volée
+    await generateImage(
+      article.titre,
+      article.contenu.slice(0, 250) + "...",
+      now.toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })
+    );
+
     res.json({
       date: now.toLocaleDateString("fr-FR", { weekday: "long", day: "numeric", month: "long", year: "numeric" }),
       numeroDuJour: dayOfYear,
       totalArticles: articles.length,
-      article
+      article,
+      previewUrl: `https://daily-piraterie-backend.onrender.com/public/preview.png`,
     });
   } catch (error) {
     console.error(error);

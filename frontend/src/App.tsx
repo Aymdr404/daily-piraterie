@@ -39,7 +39,7 @@ const App: React.FC = () => {
 
   return (
     <div className="container">
-      <h1>🏛️ Article du jour – Code civil</h1>
+      <h1>Article du jour – Le Code civil expliqué simplement</h1>
 
       <div className="article-info">
         <span>📅 {data.date}</span>
@@ -49,10 +49,10 @@ const App: React.FC = () => {
       <h2>{data.article.titre}</h2>
       <p>{data.article.contenu}</p>
 
-      <div className="footer">
-        Source : <a href="https://www.legifrance.gouv.fr">Légifrance</a><br/>
-        Données extraites du Code civil (version PDF)
-      </div>
+	  <footer>
+		<p>Données issues de <a href="https://www.legifrance.gouv.fr" target="_blank">Légifrance</a> – © République Française</p>
+	</footer>
+
     </div>
   );
 };
