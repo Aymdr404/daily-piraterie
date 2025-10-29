@@ -1,4 +1,4 @@
-import { createCanvas, CanvasRenderingContext2D  } from "canvas";
+import { createCanvas, CanvasRenderingContext2D  } from "@napi-rs/canvas";
 import fs from "fs";
 import path from "path";
 
