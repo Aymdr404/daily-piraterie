@@ -1,22 +1,20 @@
 {
-  "name": "backend",
+  "name": "daily-piraterie-backend",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "npm install && tsc",
-    "start": "node dist/index.js"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "extract": "node extract.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
-    "dotenv": "^16.4.5",
     "cors": "^2.8.5",
-    "node-fetch": "^3.3.2",
-    "typescript": "^5.3.3",
-    "@types/node": "^20.11.24"
+    "express": "^4.19.2",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
+    "typescript": "^5.3.3",
     "@types/express": "^5.0.5",
-    "@types/cors": "^2.8.17",
-    "ts-node": "^10.9.2"
+    "@types/cors": "^2.8.17"
   }
 }
