@@ -37,7 +37,7 @@ app.get("/api/article-du-jour", async (req, res) => {
       numeroDuJour: dayOfYear,
       totalArticles: articles.length,
       article,
-      previewUrl: `https://daily-piraterie-backend.onrender.com/public/preview.png`,
+      previewUrl: imageUrl,
     });
   } catch (error) {
     console.error(error);
